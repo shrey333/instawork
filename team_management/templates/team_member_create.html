@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="col-lg-6 offset-lg-3 p-5">
+
+  <h1>Add a team member</h1>
+  <h5 class="mb-3">Set email, location and role.</h5>
+
+  <hr class="mb-3"/>
+
+  <form method="post">
+    {% csrf_token %}
+
+    <h4 class="mb-3">Info</h4>
+    <input type="text"
+      class="form-control mb-3"
+        placeholder="First name"
+        name="{{ form.first_name.name }}"> 
+    {% if form.first_name.errors %}
+      <div class="alert alert-danger" role="alert">
+        {{ form.first_name.errors }}
+      </div>
+    {% endif %}
+
+    <input type="text"
+      class="form-control mb-3"
+      placeholder="Last name"
+      name="{{ form.last_name.name }}">
+    {% if form.last_name.errors %}
+      <div class="alert alert-danger" role="alert">
+        {{ form.last_name.errors }}
+      </div>
+    {% endif %}
+    
+    <input type="email"
+      class="form-control mb-3"
+      placeholder="Email"
+      name="{{ form.email.name }}">
+    {% if form.email.errors %}
+      <div class="alert alert-danger" role="alert">
+        {{ form.email.errors }}
+      </div>
+    {% endif %}
+
+    <input type="text"
+      class="form-control mb-3"
+      placeholder="Phone"
+      name="{{ form.phone.name }}">
+    {% if form.phone.errors %}
+      <div class="alert alert-danger" role="alert">
+        {{ form.phone.errors }}
+      </div>
+    {% endif %}
+
+    <h4 class="mb-3">Role</h4>
+    <div class="form-check mb-1">
+      <label class="form-check-label" for="regular">
+        Regular - Can't delete members
+      </label>
+      <input class="form-check-input" type="radio" name="{{ form.role.name }}" value="1" id="regular">
+    </div>
+    <hr/>
+    <div class="form-check mb-1">
+      <label class="form-check-label" for="admin">
+        Admin - Can delete members
+      </label>
+      <input class="form-check-input" type="radio" name="{{ form.role.name }}" value="2" id="admin">
+    </div>
+    <hr/>
+    {% if form.role.errors %}
+      <div class="alert alert-danger" role="alert">
+        {{ form.role.errors }}
+      </div>
+    {% endif %}
+    
+    <div class="d-flex flex-row-reverse mt-5">
+      <input class="btn btn-primary" type="submit" value="Save" />
+    </div>
+  </form>
+</div>
+{% endblock body %}
