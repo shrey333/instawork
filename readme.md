@@ -11,6 +11,7 @@ InstaWork assessment project.
   - [Installation](#installation)
   - [Database Setup](#database-setup)
   - [Running the Development Server](#running-the-development-server)
+  - [Total development time](#total-development-time)
 
 ## Installation
 
@@ -70,3 +71,6 @@ InstaWork assessment project.
 
 ```bash
 python manage.py runserver
+
+## Total development time
+total development time is approximately 3 hours.
