@@ -71,6 +71,12 @@ InstaWork assessment project.
 
 ```bash
 python manage.py runserver
+```
 
 ## Total development time
-total development time is approximately 3 hours.
+
+```bash
+total development time was 3 hours.
+```
+
+
